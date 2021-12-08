@@ -25,6 +25,9 @@ namespace TexAssistantTool
             SettingForm settingForm = new SettingForm();
             settingForm.Show(dockPanel1, DockState.Document);
 
+            Setting setting = new Setting();
+            setting.Show(settingForm.Pane, DockAlignment.Bottom, 0.5);
+
         }
 
 
