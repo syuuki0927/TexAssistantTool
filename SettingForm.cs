@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TexAssistantTool
 {
-    public partial class Form1 : Form
+    public partial class SettingForm : WeifenLuo.WinFormsUI.Docking.DockContent
     {
-        public Form1()
+        public SettingForm()
         {
             InitializeComponent();
         }
