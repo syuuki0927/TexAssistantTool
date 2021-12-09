@@ -23,7 +23,7 @@ namespace TexAssistantTool
             //SettingForm settingForm = new SettingForm();
             //settingForm.Show(dockPanel1, DockState.Document);
 
-            RootForm rootForm = new RootForm();
+            RootForm rootForm = new RootForm(this);
             rootForm.Show(dockPanel1, DockState.Document);
 
             //Setting setting = new Setting();
@@ -35,6 +35,12 @@ namespace TexAssistantTool
         {
             Setting setting = new Setting();
             setting.Show(dockPanel1, setting.Bounds);
+        }
+
+        public void TableFormShow(string filePath)
+        {
+            TableForm tableForm = new TableForm(filePath);
+            tableForm.Show(dockPanel1, DockState.Document);
         }
     }
 }

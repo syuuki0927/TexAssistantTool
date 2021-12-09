@@ -12,9 +12,12 @@ namespace TexAssistantTool
 {
     public partial class RootForm : WeifenLuo.WinFormsUI.Docking.DockContent
     {
-        public RootForm()
+        private FormMain formMain;  //メインフォームのインスタンスを保持
+
+        public RootForm(FormMain formMain)
         {
             InitializeComponent();
+            this.formMain = formMain;
         }
 
         private void textBoxMain_DragDrop(object sender, DragEventArgs e)
@@ -26,6 +29,7 @@ namespace TexAssistantTool
             if(extension==".xlsx")
             {
                 //エクセルファイルに対応するフォームを起動
+                formMain.TableFormShow(fileName[0]);
                 
             }
             else if(extension == ".png" || extension == ".jpg" || extension == ".JPG" || extension == ".JPEG" || extension == ".jpeg" || extension == ".eps")

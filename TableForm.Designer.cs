@@ -49,7 +49,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(451, 404);
+            this.buttonOK.Location = new System.Drawing.Point(303, 382);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 0;
@@ -65,7 +65,7 @@
             "B",
             "T",
             "P"});
-            this.comboBoxTable4.Location = new System.Drawing.Point(395, 55);
+            this.comboBoxTable4.Location = new System.Drawing.Point(349, 52);
             this.comboBoxTable4.Name = "comboBoxTable4";
             this.comboBoxTable4.Size = new System.Drawing.Size(45, 20);
             this.comboBoxTable4.TabIndex = 8;
@@ -78,7 +78,7 @@
             "B",
             "T",
             "P"});
-            this.comboBoxTable3.Location = new System.Drawing.Point(344, 55);
+            this.comboBoxTable3.Location = new System.Drawing.Point(298, 52);
             this.comboBoxTable3.Name = "comboBoxTable3";
             this.comboBoxTable3.Size = new System.Drawing.Size(45, 20);
             this.comboBoxTable3.TabIndex = 9;
@@ -91,7 +91,7 @@
             "B",
             "T",
             "P"});
-            this.comboBoxTable2.Location = new System.Drawing.Point(293, 55);
+            this.comboBoxTable2.Location = new System.Drawing.Point(247, 52);
             this.comboBoxTable2.Name = "comboBoxTable2";
             this.comboBoxTable2.Size = new System.Drawing.Size(45, 20);
             this.comboBoxTable2.TabIndex = 10;
@@ -104,28 +104,28 @@
             "B",
             "T",
             "P"});
-            this.comboBoxTable1.Location = new System.Drawing.Point(242, 55);
+            this.comboBoxTable1.Location = new System.Drawing.Point(196, 52);
             this.comboBoxTable1.Name = "comboBoxTable1";
             this.comboBoxTable1.Size = new System.Drawing.Size(45, 20);
             this.comboBoxTable1.TabIndex = 11;
             // 
             // textBoxLabel
             // 
-            this.textBoxLabel.Location = new System.Drawing.Point(242, 118);
+            this.textBoxLabel.Location = new System.Drawing.Point(196, 156);
             this.textBoxLabel.Name = "textBoxLabel";
             this.textBoxLabel.Size = new System.Drawing.Size(100, 19);
             this.textBoxLabel.TabIndex = 13;
             // 
             // textBoxCaption
             // 
-            this.textBoxCaption.Location = new System.Drawing.Point(242, 90);
+            this.textBoxCaption.Location = new System.Drawing.Point(196, 106);
             this.textBoxCaption.Name = "textBoxCaption";
             this.textBoxCaption.Size = new System.Drawing.Size(100, 19);
             this.textBoxCaption.TabIndex = 15;
             // 
             // buttonLabelAutoFill
             // 
-            this.buttonLabelAutoFill.Location = new System.Drawing.Point(349, 114);
+            this.buttonLabelAutoFill.Location = new System.Drawing.Point(303, 156);
             this.buttonLabelAutoFill.Name = "buttonLabelAutoFill";
             this.buttonLabelAutoFill.Size = new System.Drawing.Size(99, 23);
             this.buttonLabelAutoFill.TabIndex = 16;
@@ -136,7 +136,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 149);
+            this.label4.Location = new System.Drawing.Point(52, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 12);
             this.label4.TabIndex = 1;
@@ -148,7 +148,7 @@
             this.comboBoxCaptionPostion.Items.AddRange(new object[] {
             "上",
             "下"});
-            this.comboBoxCaptionPostion.Location = new System.Drawing.Point(243, 149);
+            this.comboBoxCaptionPostion.Location = new System.Drawing.Point(196, 206);
             this.comboBoxCaptionPostion.Name = "comboBoxCaptionPostion";
             this.comboBoxCaptionPostion.Size = new System.Drawing.Size(44, 20);
             this.comboBoxCaptionPostion.TabIndex = 17;
@@ -156,7 +156,7 @@
             // checkBoxCenteringSpecification
             // 
             this.checkBoxCenteringSpecification.AutoSize = true;
-            this.checkBoxCenteringSpecification.Location = new System.Drawing.Point(101, 178);
+            this.checkBoxCenteringSpecification.Location = new System.Drawing.Point(54, 256);
             this.checkBoxCenteringSpecification.Name = "checkBoxCenteringSpecification";
             this.checkBoxCenteringSpecification.Size = new System.Drawing.Size(126, 16);
             this.checkBoxCenteringSpecification.TabIndex = 18;
@@ -166,7 +166,7 @@
             // checkBoxColSpecification
             // 
             this.checkBoxColSpecification.AutoSize = true;
-            this.checkBoxColSpecification.Location = new System.Drawing.Point(101, 200);
+            this.checkBoxColSpecification.Location = new System.Drawing.Point(54, 306);
             this.checkBoxColSpecification.Name = "checkBoxColSpecification";
             this.checkBoxColSpecification.Size = new System.Drawing.Size(134, 16);
             this.checkBoxColSpecification.TabIndex = 19;
@@ -175,7 +175,7 @@
             // 
             // textBoxColSpecification
             // 
-            this.textBoxColSpecification.Location = new System.Drawing.Point(243, 197);
+            this.textBoxColSpecification.Location = new System.Drawing.Point(196, 303);
             this.textBoxColSpecification.Name = "textBoxColSpecification";
             this.textBoxColSpecification.Size = new System.Drawing.Size(100, 19);
             this.textBoxColSpecification.TabIndex = 20;
@@ -183,7 +183,7 @@
             // checkBoxCaptionSet
             // 
             this.checkBoxCaptionSet.AutoSize = true;
-            this.checkBoxCaptionSet.Location = new System.Drawing.Point(97, 90);
+            this.checkBoxCaptionSet.Location = new System.Drawing.Point(51, 106);
             this.checkBoxCaptionSet.Name = "checkBoxCaptionSet";
             this.checkBoxCaptionSet.Size = new System.Drawing.Size(138, 16);
             this.checkBoxCaptionSet.TabIndex = 21;
@@ -193,7 +193,7 @@
             // checkBoxLabelSet
             // 
             this.checkBoxLabelSet.AutoSize = true;
-            this.checkBoxLabelSet.Location = new System.Drawing.Point(97, 120);
+            this.checkBoxLabelSet.Location = new System.Drawing.Point(51, 156);
             this.checkBoxLabelSet.Name = "checkBoxLabelSet";
             this.checkBoxLabelSet.Size = new System.Drawing.Size(114, 16);
             this.checkBoxLabelSet.TabIndex = 21;
@@ -203,7 +203,7 @@
             // checkBoxPostion
             // 
             this.checkBoxPostion.AutoSize = true;
-            this.checkBoxPostion.Location = new System.Drawing.Point(97, 59);
+            this.checkBoxPostion.Location = new System.Drawing.Point(51, 56);
             this.checkBoxPostion.Name = "checkBoxPostion";
             this.checkBoxPostion.Size = new System.Drawing.Size(134, 16);
             this.checkBoxPostion.TabIndex = 21;
@@ -212,17 +212,17 @@
             // 
             // textBoxResult
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(111, 264);
+            this.textBoxResult.Location = new System.Drawing.Point(427, 52);
             this.textBoxResult.Multiline = true;
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(415, 123);
+            this.textBoxResult.Size = new System.Drawing.Size(309, 353);
             this.textBoxResult.TabIndex = 22;
             // 
-            // Table
+            // TableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 450);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.checkBoxLabelSet);
             this.Controls.Add(this.checkBoxPostion);
@@ -240,7 +240,7 @@
             this.Controls.Add(this.comboBoxTable1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonOK);
-            this.Name = "Table";
+            this.Name = "TableForm";
             this.Text = "Table";
             this.Load += new System.EventHandler(this.Table_Load);
             this.ResumeLayout(false);

@@ -118,45 +118,93 @@ namespace TexAssistantTool
                 else TexText += "l";
 
                 //表の一番上の線について判定
-                if(lastline == XLBorderStyleValues.None && (lastline != workseet.Cell(firstRow,i).Style.Border.TopBorder && lastline != workseet.Cell(firstRow -1, i).Style.Border.BottomBorder))
+                try
                 {
-                    first = i + 1 - firstCol;
-                    if(workseet.Cell(firstRow,i).Style.Border.TopBorder==XLBorderStyleValues.Double|| workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Double)
+                    if (lastline == XLBorderStyleValues.None &&
+                    (lastline != workseet.Cell(firstRow, i).Style.Border.TopBorder && lastline != workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder))
                     {
+                        first = i + 1 - firstCol;
+                        if (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Double || workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Double)
+                        {
+                            lastline = XLBorderStyleValues.Double;
+                        }
+                        else
+                        {
+                            lastline = XLBorderStyleValues.Thin;
+                        }
+                    }
+                    else if (lastline == XLBorderStyleValues.Thin &&
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.None))
+                    {
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
+                        lastline = XLBorderStyleValues.None;
+                    }
+                    else if (lastline == XLBorderStyleValues.Thin &&
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Double || workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Double))
+                    {
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
                         lastline = XLBorderStyleValues.Double;
                     }
-                    else
+                    else if (lastline == XLBorderStyleValues.Double &&
+                        ((workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.None) ||
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Thin && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Thin)))
                     {
-                        lastline = XLBorderStyleValues.Thin;
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
+                        lastline = workseet.Cell(firstRow, i).Style.Border.TopBorder;
+                        MessageBox.Show("二重線は途中で線の種類を変えることはできません.",
+                        "エラー",
+                        MessageBoxButtons.OK);
+                        return "";
                     }
                 }
-                else if(lastline == XLBorderStyleValues.Thin && 
-                    (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.None))
+                catch(ArgumentOutOfRangeException e)
                 {
-                    line += "\\cline{" + first + "-" + (i - firstCol) + "}";
-                    first = i + 1 - firstCol;
-                    lastline = XLBorderStyleValues.None;
+                    if (lastline == XLBorderStyleValues.None &&
+                    (lastline != workseet.Cell(firstRow, i).Style.Border.TopBorder))
+                    {
+                        first = i + 1 - firstCol;
+                        if (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Double)
+                        {
+                            lastline = XLBorderStyleValues.Double;
+                        }
+                        else
+                        {
+                            lastline = XLBorderStyleValues.Thin;
+                        }
+                    }
+                    else if (lastline == XLBorderStyleValues.Thin &&
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None))
+                    {
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
+                        lastline = XLBorderStyleValues.None;
+                    }
+                    else if (lastline == XLBorderStyleValues.Thin &&
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Double))
+                    {
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
+                        lastline = XLBorderStyleValues.Double;
+                    }
+                    else if (lastline == XLBorderStyleValues.Double &&
+                        ((workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None ) ||
+                        (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Thin )))
+                    {
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        line += "\\cline{" + first + "-" + (i - firstCol) + "}";
+                        first = i + 1 - firstCol;
+                        lastline = workseet.Cell(firstRow, i).Style.Border.TopBorder;
+                        MessageBox.Show("二重線は途中で線の種類を変えることはできません.",
+                        "エラー",
+                        MessageBoxButtons.OK);
+                        return "";
+                    }
                 }
-                else if(lastline == XLBorderStyleValues.Thin &&
-                    (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Double || workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Double))
-                {
-                    line += "\\cline{" + first + "-" + (i - firstCol) + "}";
-                    first = i + 1 - firstCol;
-                    lastline = XLBorderStyleValues.Double;
-                }
-                else if(lastline == XLBorderStyleValues.Double &&
-                    ((workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.None && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.None) ||
-                    (workseet.Cell(firstRow, i).Style.Border.TopBorder == XLBorderStyleValues.Thin && workseet.Cell(firstRow - 1, i).Style.Border.BottomBorder == XLBorderStyleValues.Thin)))
-                {
-                    line += "\\cline{" + first + "-" + (i  - firstCol) + "}";
-                    line += "\\cline{" + first + "-" + (i  - firstCol) + "}";
-                    first = i + 1 - firstCol;
-                    lastline = workseet.Cell(firstRow, i).Style.Border.TopBorder;
-                    MessageBox.Show("二重線は途中で線の種類を変えることはできません.",
-                    "エラー",
-                    MessageBoxButtons.OK);
-                    return "";
-                }
+                
                
 
             }
