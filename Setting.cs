@@ -12,58 +12,26 @@ namespace TexAssistantTool
 {
     public partial class Setting : WeifenLuo.WinFormsUI.Docking.DockContent
     {
-        SettingsData sd = new SettingsData();
         
 
         public Setting()
         {
             InitializeComponent();
+
+            
         }
 
         private void Setting_Load(object sender, EventArgs e)
         {
 
-            sd.pLoad();
-
-            //設定のクラスからインターフェースに既存の設定値を反映させる
-            //checkedListBoxTable.SetItemChecked(0, sd.getTableLabelSpecified());
-            //checkedListBoxTable.SetItemChecked(1, sd.getTableCaptionSpecified());
-            //checkedListBoxTable.SetItemChecked(2, sd.getTableCenteringSpecified());
-
-            //checkedListBoxFigure.SetItemChecked(0, sd.getFigureLabelSpecified());
-            //checkedListBoxFigure.SetItemChecked(1, sd.getFigureCaptionSpecified());
-            //checkedListBoxFigure.SetItemChecked(2, sd.getFigureCenteringSpecified());
-
-            //checkBoxTablePos.Checked = sd.getTablePositionSpecified();
-            //checkBoxFigurePos.Checked = sd.getFigurePositionSpecified();
-
-            //if (sd.getTableCaptionPos()) comboBoxTableCaptionPos.SelectedIndex = 0;
-            //else comboBoxTableCaptionPos.SelectedIndex = 1;
-
-            //if (sd.getFigureCaptionPos()) comboBoxFigureCaptionPos.SelectedIndex = 0;
-            //else comboBoxFigureCaptionPos.SelectedIndex = 1;
-
-            
-
-            //comboBoxTable1.SelectedIndex = sd.getTablePosition()[0];
-            //comboBoxTable2.SelectedIndex = sd.getTablePosition()[1];
-            //comboBoxTable3.SelectedIndex = sd.getTablePosition()[2];
-            //comboBoxTable4.SelectedIndex = sd.getTablePosition()[3];
-
-            //comboBoxFigure1.SelectedIndex = sd.getFigurePosition()[0];
-            //comboBoxFigure2.SelectedIndex = sd.getFigurePosition()[1];
-            //comboBoxFigure3.SelectedIndex = sd.getFigurePosition()[2];
-            //comboBoxFigure4.SelectedIndex = sd.getFigurePosition()[3];
-
-            //kokokara
-
+            //インターフェースに既存の設定値を反映させる
             var settingP = Properties.Settings.Default;
 
             checkedListBoxTable.SetItemChecked(0, settingP.TableLabelSpecified);
             checkedListBoxTable.SetItemChecked(1, settingP.TableCaptionSpecified);
             checkedListBoxTable.SetItemChecked(2, settingP.TableCenteringSpecified);
 
-            checkedListBoxFigure.SetItemChecked(0, sd.getFigureLabelSpecified());
+            checkedListBoxFigure.SetItemChecked(0, settingP.FigureLabelSpecified);
             checkedListBoxFigure.SetItemChecked(1, settingP.FigureCaptionSpecified);
             checkedListBoxFigure.SetItemChecked(2, settingP.FigureCenteringSpecified);
 
@@ -75,8 +43,6 @@ namespace TexAssistantTool
 
             if (settingP.FigureCaptionPos) comboBoxFigureCaptionPos.SelectedIndex = 0;
             else comboBoxFigureCaptionPos.SelectedIndex = 1;
-
-
 
             comboBoxTable1.SelectedIndex = settingP.TablePosition0;
             comboBoxTable2.SelectedIndex = settingP.TablePosition1;
@@ -120,40 +86,7 @@ namespace TexAssistantTool
                 return;
             }
 
-            //SettingsDataのフィールドを書き換える
-            //sd.setTableLabelSpecified(checkedListBoxTable.GetItemChecked(0));
-            //sd.setTableCaptionSpecified(checkedListBoxTable.GetItemChecked(1));
-            //sd.setTableCenteringSpecified(checkedListBoxTable.GetItemChecked(2));
-
-            //sd.setFigureLabelSpecified(checkedListBoxFigure.GetItemChecked(0));
-            //sd.setFigureCaptionSpecified(checkedListBoxFigure.GetItemChecked(1));
-            //sd.setFigureCenteringSpecified(checkedListBoxFigure.GetItemChecked(2));
-
-            //sd.setTablePositionSpecified(checkBoxTablePos.Checked);
-            //sd.setFigurePositionSpecified(checkBoxFigurePos.Checked);
-
-            //if (comboBoxTableCaptionPos.SelectedIndex == 0) sd.setTableCaptionPos(true);
-            //else sd.setTableCaptionPos(false);
-
-            //if (comboBoxFigureCaptionPos.SelectedIndex == 0) sd.setFigureCaptionPos(true);
-            //else sd.setFigureCaptionPos(false);
-
-            //sd.setTablePosition(comboBoxTable1.SelectedIndex,
-            //    comboBoxTable2.SelectedIndex,
-            //    comboBoxTable3.SelectedIndex,
-            //    comboBoxTable4.SelectedIndex);
-
-            //sd.setFigurePosition(comboBoxFigure1.SelectedIndex,
-            //    comboBoxFigure2.SelectedIndex,
-            //    comboBoxFigure3.SelectedIndex,
-            //    comboBoxFigure4.SelectedIndex);
-
-            //sd.pEnd();
-
-
-
-
-
+            //設定値の更新
             var settingP = Properties.Settings.Default;
             settingP.TableLabelSpecified = checkedListBoxTable.GetItemChecked(0);
             settingP.TableCaptionSpecified = checkedListBoxTable.GetItemChecked(1);
@@ -179,7 +112,7 @@ namespace TexAssistantTool
             settingP.FigurePosition2 = comboBoxFigure3.SelectedIndex;
             settingP.FigurePosition3 = comboBoxFigure4.SelectedIndex;
 
-            settingP.Save();
+            settingP.Save();    //設定を保存
 
 
 
