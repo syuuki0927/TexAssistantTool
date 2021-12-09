@@ -54,6 +54,10 @@ namespace TexAssistantTool
             comboBoxFigure3.SelectedIndex = settingP.FigurePosition2;
             comboBoxFigure4.SelectedIndex = settingP.FigurePosition3;
 
+            checkBoxFigurePath.Checked = settingP.FigureRelativePathSpesification;
+            textBoxFigureTeXFilePath.Text = settingP.TeXFilePath;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -111,6 +115,9 @@ namespace TexAssistantTool
             settingP.FigurePosition1 = comboBoxFigure2.SelectedIndex;
             settingP.FigurePosition2 = comboBoxFigure3.SelectedIndex;
             settingP.FigurePosition3 = comboBoxFigure4.SelectedIndex;
+
+            settingP.FigureRelativePathSpesification = checkBoxFigurePath.Checked;
+            settingP.TeXFilePath = textBoxFigureTeXFilePath.Text;
 
             settingP.Save();    //設定を保存
 

@@ -42,5 +42,11 @@ namespace TexAssistantTool
             TableForm tableForm = new TableForm(filePath);
             tableForm.Show(dockPanel1, DockState.Document);
         }
+
+        public void FigureFormShow(string filePath)
+        {
+            FigureForm figureForm = new FigureForm(filePath);
+            figureForm.Show(dockPanel1, DockState.Document);
+        }
     }
 }

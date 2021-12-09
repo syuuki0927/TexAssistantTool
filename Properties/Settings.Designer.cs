@@ -238,5 +238,29 @@ namespace TexAssistantTool.Properties {
                 this["TablePosition0"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TeXFilePath {
+            get {
+                return ((string)(this["TeXFilePath"]));
+            }
+            set {
+                this["TeXFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FigureRelativePathSpesification {
+            get {
+                return ((bool)(this["FigureRelativePathSpesification"]));
+            }
+            set {
+                this["FigureRelativePathSpesification"] = value;
+            }
+        }
     }
 }
